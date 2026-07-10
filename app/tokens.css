@@ -1,0 +1,92 @@
+/* Design Tokens - Auto-generated */
+/* Do not edit directly - modify tokens.json instead */
+
+/* === PRIMITIVES === */
+:root {
+  --primitive-color-paper-50: #FBF4E1;
+  --primitive-color-paper-100: #F3E6C4;
+  --primitive-color-paper-200: #E8D6A6;
+  --primitive-color-paper-300: #D8C08A;
+  --primitive-color-paper-400: #C4A76E;
+  --primitive-color-ink-300: #8A7455;
+  --primitive-color-ink-500: #5E4A31;
+  --primitive-color-ink-700: #3E2D1B;
+  --primitive-color-ink-900: #241A10;
+  --primitive-color-sea-300: #4C8C8A;
+  --primitive-color-sea-500: #1F6668;
+  --primitive-color-sea-700: #154D4E;
+  --primitive-color-sea-900: #0C3638;
+  --primitive-color-rust-300: #D28362;
+  --primitive-color-rust-500: #B8492F;
+  --primitive-color-rust-600: #9C3A26;
+  --primitive-color-rust-700: #7A2D1F;
+  --primitive-color-brass-300: #C9A85C;
+  --primitive-color-brass-500: #A9812E;
+  --primitive-color-brass-600: #8B6B2A;
+  --primitive-font-display: var(--font-chart-hand), 'IM Fell English', Georgia, serif;
+  --primitive-font-serif: var(--font-chart-body), 'Spectral', Georgia, serif;
+  --primitive-font-mono: var(--font-chart-mono), 'Special Elite', 'Courier New', monospace;
+  --primitive-motion-duration-micro: 180ms;
+  --primitive-motion-duration-base: 420ms;
+  --primitive-motion-duration-reveal: 900ms;
+  --primitive-motion-duration-drift: 6000ms;
+  --primitive-motion-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --primitive-motion-ease-chart: cubic-bezier(0.4, 0, 0.2, 1);
+  --primitive-tracking-display: 0.01em;
+  --primitive-tracking-label: 0.22em;
+}
+
+/* === SEMANTIC === */
+:root {
+  --background: #F3E6C4;
+  --foreground: #241A10;
+  --card: #FBF4E1;
+  --card-foreground: #241A10;
+  --popover: #FBF4E1;
+  --popover-foreground: #241A10;
+  --primary: #0C3638;
+  --primary-foreground: #FBF4E1;
+  --secondary: #E8D6A6;
+  --secondary-foreground: #241A10;
+  --muted: #E8D6A6;
+  --muted-foreground: #5E4A31;
+  --accent: #D8C08A;
+  --accent-foreground: #241A10;
+  --destructive: #7A2D1F;
+  --border: #8A7455;
+  --input: #D8C08A;
+  --ring: #1F6668;
+  --radius: 0.125rem;
+  --route: #9C3A26;
+  --route-dim: #D28362;
+  --compass: #0C3638;
+  --compass-accent: #A9812E;
+  --sounding: #8A7455;
+  --surface-line: #8A7455;
+  --type-display: var(--font-chart-hand), 'IM Fell English', Georgia, serif;
+  --type-body: var(--font-chart-body), 'Spectral', Georgia, serif;
+  --type-label: var(--font-chart-mono), 'Special Elite', 'Courier New', monospace;
+  --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-chart: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-micro: 180ms;
+  --duration-base: 420ms;
+  --duration-reveal: 900ms;
+  --tracking-display: 0.01em;
+  --tracking-label: 0.22em;
+}
+
+/* === COMPONENTS === */
+:root {
+  --hero-title-size: clamp(3rem, 9vw, 7.5rem);
+  --hero-title-leading: 0.98;
+  --hero-kicker-size: 0.72rem;
+  --hero-vignette: radial-gradient(ellipse 120% 80% at 50% 0%, rgba(36,26,16,0.0), rgba(36,26,16,0.14) 100%);
+  --pin-size: 2.75rem;
+  --pin-ring: #9C3A26;
+  --button-primary-bg: #0C3638;
+  --button-primary-fg: #FBF4E1;
+  --button-primary-hover-bg: #9C3A26;
+  --button-primary-hover-fg: #FBF4E1;
+  --button-ghost-border: #5E4A31;
+  --button-ghost-hover-border: #9C3A26;
+}

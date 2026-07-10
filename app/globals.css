@@ -1,0 +1,155 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "./tokens.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--type-body);
+  --font-heading: var(--type-display);
+  --font-display: var(--type-display);
+  --color-ring: var(--ring);
+  --color-border: var(--border);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-route: var(--route);
+  --color-route-dim: var(--route-dim);
+  --color-compass: var(--compass);
+  --color-compass-accent: var(--compass-accent);
+  --ease-reveal: var(--ease-reveal);
+  --ease-chart: var(--ease-chart);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    color-scheme: light;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(ellipse 60% 45% at 12% 8%, rgba(94, 74, 49, 0.10), transparent 60%),
+      radial-gradient(ellipse 55% 40% at 88% 18%, rgba(94, 74, 49, 0.08), transparent 55%),
+      radial-gradient(ellipse 70% 50% at 20% 62%, rgba(28, 90, 92, 0.05), transparent 60%),
+      radial-gradient(ellipse 65% 45% at 85% 78%, rgba(94, 74, 49, 0.09), transparent 55%),
+      repeating-radial-gradient(circle at 50% 0%, transparent 0, transparent 140px, rgba(94, 74, 49, 0.035) 141px, transparent 143px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.15  0 0 0 0 0.11  0 0 0 0 0.07  0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-color: var(--background);
+    background-attachment: fixed;
+  }
+  ::selection {
+    background: var(--route);
+    color: var(--card);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--type-display);
+  }
+  .font-chart-mono {
+    font-family: var(--type-label);
+  }
+  .text-label {
+    font-family: var(--type-label);
+    font-size: 0.7rem;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  /* Reveal: visible by default (no CSS opacity:0 hide). GSAP animates FROM
+     an offset state using gsap.from() so content is never hidden if JS fails. */
+  .reveal {
+    opacity: 1;
+  }
+
+  .chart-border {
+    border: 1px solid var(--border);
+    box-shadow:
+      0 0 0 4px var(--background),
+      0 0 0 5px var(--border);
+  }
+
+  .paper-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .paper-card::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+    pointer-events: none;
+  }
+
+  .dot-leader {
+    flex: 1;
+    border-bottom: 2px dotted var(--border);
+    margin: 0 0.6em;
+    min-width: 1.5rem;
+    transform: translateY(-0.35em);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes compass-drift {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.route-line {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--route) 0,
+    var(--route) 3px,
+    transparent 3px,
+    transparent 15px
+  );
+  width: 3px;
+}
+
+.route-line-h {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--route) 0,
+    var(--route) 3px,
+    transparent 3px,
+    transparent 15px
+  );
+  height: 3px;
+}
