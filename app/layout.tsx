@@ -26,7 +26,7 @@ const chartMono = Special_Elite({
 export const metadata: Metadata = {
   title: "Dupin — Biograd na Moru | Konoba na moru, karta ukusa",
   description:
-    "Restoran Dupin u Biogradu na Moru, uz šetalište kneza Branimira i marinu Kornati. Sredozemna kuhinja, svježe iz mora — tuna, hobotnica, škampi na buzaru. TripAdvisor 4.5/5, 414+ recenzija.",
+    "Restoran Dupin u Biogradu na Moru, na Šetalištu kneza Branimira 60. Plodovi mora i buzare, riba i meso s gradela, pasta i rižoti. Ocjena 4,5/5 na Googleu (490 recenzija). Svaki dan 15:00–23:30.",
 };
 
 export default function RootLayout({
@@ -40,6 +40,32 @@ export default function RootLayout({
       className={`${chartHand.variable} ${chartBody.variable} ${chartMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Restaurant",
+              name: "Restoran Dupin",
+              description:
+                "Restoran uz obalu u Biogradu na Moru — plodovi mora i buzare, riba i meso s gradela, pasta i rižoti.",
+              servesCuisine: ["Mediteranska", "Riba i plodovi mora", "Dalmatinska", "Roštilj"],
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Šetalište kneza Branimira 60",
+                addressLocality: "Biograd na Moru",
+                postalCode: "23210",
+                addressRegion: "Zadarska županija",
+                addressCountry: "HR",
+              },
+              telephone: "+385954574141",
+              url: "https://artme-nx.github.io/dupin-biograd-v3/",
+              priceRange: "€€",
+              acceptsReservations: "True",
+              openingHours: "Mo-Su 15:00-23:30",
+            }),
+          }}
+        />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

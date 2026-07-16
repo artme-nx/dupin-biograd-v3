@@ -6,66 +6,69 @@ import { ScaleBar } from "@/components/scale-bar";
 import { SoundingsField } from "@/components/soundings-field";
 import { Postcard } from "@/components/postcard";
 
+// Stvarne fotke lokala. Interijer potvrđen (poklapa se s RestaurantGuru „Dupin interior");
+// jela se poklapaju s fotografiranim DUPIN jelovnikom. basePath prefiks (plain img).
+const B = "/dupin-biograd-v3/img";
 const IMG = {
-  marinaAerial: "https://images.unsplash.com/photo-1715260867503-bcdd42768def",
-  woodenDock: "https://images.unsplash.com/photo-1597334299414-f5efd4f32339",
-  ropeCoil: "https://images.unsplash.com/photo-1649776044300-0bedee8b5300",
-  shipBell: "https://images.unsplash.com/photo-1723883077281-85d8c2d4e5fc",
-  nightHarbor: "https://images.unsplash.com/photo-1780856036788-6223dc07cda0",
-  sunsetHarbor: "https://images.unsplash.com/photo-1769623709172-31c17784b16d",
-  sailboats: "https://images.unsplash.com/photo-1767045570562-741bf80a9dc5",
-  grilledFishOctopus: "https://images.unsplash.com/photo-1768322264423-4b0adf0cf31b",
-  grilledFishBoard: "https://images.unsplash.com/photo-1624419845204-7a011c2c902c",
-  shrimpPlate: "https://images.unsplash.com/photo-1574788032365-69e929e3ec68",
-  pannaCotta: "https://images.unsplash.com/photo-1702728109878-c61a98d80491",
+  marinaAerial: `${B}/dupin-vrt-terasa.webp`,
+  woodenDock: `${B}/dupin-interijer-lukovi.webp`,
+  ropeCoil: `${B}/dupin-zar-plata.webp`,
+  shipBell: `${B}/dupin-spare-ribs.webp`,
+  nightHarbor: `${B}/dupin-interijer-lukovi.webp`,
+  sunsetHarbor: `${B}/dupin-vrt-terasa.webp`,
+  sailboats: `${B}/dupin-dagnje-buzara.webp`,
+  grilledFishOctopus: `${B}/dupin-zar-plata.webp`,
+  grilledFishBoard: `${B}/dupin-biftek-krumpir.webp`,
+  shrimpPlate: `${B}/dupin-raznjici-gambera.webp`,
+  pannaCotta: `${B}/dupin-pileci-snicel.webp`,
 };
 
-function img(url: string, w: number, q = 82) {
-  return `${url}?auto=format&fit=crop&w=${w}&q=${q}`;
+function img(url: string, _w?: number, _q?: number) {
+  return url;
 }
 
 const LOG_ENTRIES = [
   {
     num: "I",
-    title: "Sate ala Dupin",
-    tag: "Kućni specijalitet",
-    desc: "Gostima najčešće spominjani jelovnički biser — Dupinova potpisna kombinacija mesa i plodova mora na vrućoj kamenoj ploči, po kojoj je restoran prepoznatljiv već godinama.",
-    img: IMG.grilledFishOctopus,
+    title: "Mišana buzara „Dupin” za dvoje",
+    tag: "Potpis kuće",
+    desc: "Potpisno jelo po kojem je restoran dobio ime — miješani plodovi mora na buzaru, za dvoje. Uz njega i morski piat Dupin, plata plodova mora s kuće.",
+    img: IMG.ropeCoil,
     align: "left" as const,
   },
   {
     num: "II",
-    title: "Škampi na buzaru i hobotnica",
+    title: "Dagnje i vongole na buzaru",
     tag: "Iz mora",
-    desc: "Svježi ulov dana kuhan na tradicionalan dalmatinski način — na buzaru, ispod peke ili jednostavno s gradela, uz umak od rajčice, bijelog vina i češnjaka.",
-    img: IMG.shrimpPlate,
+    desc: "Školjke kuhane na tradicionalan dalmatinski način — na buzaru, uz umak od rajčice, bijelog vina i češnjaka. Uz ražnjiće od repova gambera i lignje s gradela.",
+    img: IMG.grilledFishOctopus,
     align: "right" as const,
   },
   {
     num: "III",
     title: "Riba i meso s gradela",
     tag: "S roštilja",
-    desc: "Losos, filet steak i rebarca redovito se spominju među favoritima gostiju — jednostavno pripremljeni, s naglaskom na kvalitetu namirnice.",
+    desc: "Orada, brancin i tuna steak s gradela, uz blitvu; a s mesne strane ribeye, ramstek, spare ribs i pljeskavica punjena sirom.",
     img: IMG.grilledFishBoard,
     align: "left" as const,
   },
   {
     num: "IV",
-    title: "Panna cotta",
-    tag: "Za kraj plovidbe",
-    desc: "Kremasti finale večere, uz mali izbor kolača — deserti koje recenzije dosljedno izdvajaju kao ugodno iznenađenje.",
+    title: "Za svaki apetit",
+    tag: "Meso i pasta",
+    desc: "Uz ribu i plodove mora, kuća nudi šnicele, ražnjiće, rižote i pastu — restoran za cijelo društvo. Za kraj panna cotta s frutti di bosco.",
     img: IMG.pannaCotta,
     align: "right" as const,
   },
 ];
 
 const GALLERY = [
-  { src: IMG.sailboats, alt: "Jedrilice u akvatoriju kod Biograda na Moru", caption: "Prilaz s mora" },
-  { src: IMG.nightHarbor, alt: "Luka i šetalište u sumrak", caption: "Šetalište u sumrak" },
-  { src: IMG.woodenDock, alt: "Drveni gat u marini", caption: "Gat, Marina Kornati" },
-  { src: IMG.ropeCoil, alt: "Smotano brodsko uže na privezu", caption: "Privez br. 60" },
-  { src: IMG.shipBell, alt: "Brodsko zvono", caption: "Znak za polazak" },
-  { src: IMG.sunsetHarbor, alt: "Zalazak sunca nad lukom Biograda na Moru", caption: "Zalazak nad Biogradom" },
+  { src: IMG.woodenDock, alt: "Interijer restorana Dupin — kameni lukovi i tople svjetiljke", caption: "Naš interijer" },
+  { src: IMG.sunsetHarbor, alt: "Vrtna terasa restorana Dupin", caption: "Terasa" },
+  { src: IMG.ropeCoil, alt: "Plata s gradela u restoranu Dupin", caption: "S gradela" },
+  { src: IMG.sailboats, alt: "Dagnje na buzaru", caption: "Na buzaru" },
+  { src: IMG.grilledFishBoard, alt: "Biftek s krumpirom", caption: "Meso s gradela" },
+  { src: IMG.shrimpPlate, alt: "Ražnjići od repova gambera na žaru", caption: "Iz mora" },
 ];
 
 export default function Home() {
@@ -114,7 +117,7 @@ export default function Home() {
             </div>
           </div>
           <p className="reveal relative z-10 mt-10 font-chart-mono text-[0.65rem]" style={{ color: "var(--muted-foreground)" }}>
-            ★ TripAdvisor 4,5 / 5 — 414+ recenzija · #3 od 95 restorana u Biogradu na Moru
+            ★ 4,5 / 5 na Googleu — 490 recenzija · Biograd na Moru
           </p>
         </section>
 
@@ -155,8 +158,8 @@ export default function Home() {
                 </div>
                 <Postcard
                   src={img(IMG.marinaAerial, 700)}
-                  alt="Marina Kornati iz zraka, Biograd na Moru"
-                  caption="Marina Kornati, do broda #dupin"
+                  alt="Vrtna terasa restorana Dupin u Biogradu na Moru"
+                  caption="Naša terasa, Šetalište kneza Branimira 60"
                   rotate={-2}
                   priority
                 />
@@ -243,15 +246,15 @@ export default function Home() {
             <div className="reveal mt-12 grid gap-8 sm:grid-cols-3">
               <div className="paper-card p-6 text-center">
                 <div className="font-display text-5xl" style={{ color: "var(--route)" }}>4,5</div>
-                <p className="text-label mt-2" style={{ color: "var(--muted-foreground)" }}>TripAdvisor / 5</p>
+                <p className="text-label mt-2" style={{ color: "var(--muted-foreground)" }}>Google / 5</p>
               </div>
               <div className="paper-card p-6 text-center">
-                <div className="font-display text-5xl" style={{ color: "var(--route)" }}>414+</div>
+                <div className="font-display text-5xl" style={{ color: "var(--route)" }}>490</div>
                 <p className="text-label mt-2" style={{ color: "var(--muted-foreground)" }}>recenzija gostiju</p>
               </div>
               <div className="paper-card p-6 text-center">
-                <div className="font-display text-5xl" style={{ color: "var(--route)" }}>#3</div>
-                <p className="text-label mt-2" style={{ color: "var(--muted-foreground)" }}>od 95 restorana u gradu</p>
+                <div className="font-display text-5xl" style={{ color: "var(--route)" }}>15–35 €</div>
+                <p className="text-label mt-2" style={{ color: "var(--muted-foreground)" }}>po osobi</p>
               </div>
             </div>
 
@@ -263,9 +266,9 @@ export default function Home() {
                 pažljiva i vedra.
               </p>
               <p>
-                Gosti posebno izdvajaju &bdquo;Sate ala Dupin&ldquo; kao razlog
-                povratka, dok se hobotnica, tuna i tjestenine s plodovima mora
-                spominju kao dosljedno dobar odabir iz sezone u sezonu.
+                Gosti se vraćaju zbog buzare i plodova mora, a hobotnica, tuna
+                i tjestenine s plodovima mora spominju se kao dosljedno dobar
+                odabir iz sezone u sezonu.
               </p>
             </div>
             <p className="mt-6 font-chart-mono text-xs" style={{ color: "var(--muted-foreground)" }}>
@@ -327,9 +330,9 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-label" style={{ color: "var(--muted-foreground)" }}>Radno vrijeme</p>
-                  <p className="font-serif">Utorak – nedjelja, 15:00 – 24:00</p>
+                  <p className="font-serif">Svaki dan, 15:00 – 23:30</p>
                   <p className="font-serif" style={{ color: "var(--muted-foreground)" }}>
-                    Ponedjeljkom zatvoreno · sezonski rad, provjerite izvan sezone
+                    Sezonski rad — izvan sezone provjerite pozivom
                   </p>
                 </div>
                 <div>
