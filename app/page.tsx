@@ -98,7 +98,7 @@ export default function Home() {
             </p>
             <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="tel:+385915423885"
+                href="tel:+385954574141"
                 className="rounded-full px-7 py-3 text-sm uppercase tracking-[0.14em] transition-colors"
                 style={{ background: "var(--button-primary-bg)", color: "var(--button-primary-fg)" }}
               >
@@ -334,13 +334,13 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-label" style={{ color: "var(--muted-foreground)" }}>Veza s brodom (telefon)</p>
-                  <a href="tel:+385915423885" className="font-display text-2xl hover:text-[color:var(--route)]">
-                    +385 91 542 3885
+                  <a href="tel:+385954574141" className="font-display text-2xl hover:text-[color:var(--route)]">
+                    095 457 4141
                   </a>
                 </div>
                 <div className="flex flex-wrap gap-3 pt-2">
                   <a
-                    href="tel:+385915423885"
+                    href="tel:+385954574141"
                     className="rounded-full px-6 py-3 text-sm uppercase tracking-[0.12em]"
                     style={{ background: "var(--button-primary-bg)", color: "var(--button-primary-fg)" }}
                   >
@@ -390,7 +390,7 @@ export default function Home() {
             <div className="font-serif text-sm" style={{ color: "var(--muted-foreground)" }}>
               <p className="font-display text-xl" style={{ color: "var(--foreground)" }}>Dupin</p>
               <p>Šetalište kneza Branimira 60, Biograd na Moru</p>
-              <p>+385 91 542 3885</p>
+              <p>095 457 4141</p>
               <p className="mt-4 text-xs italic">
                 Karta nije namijenjena stvarnoj navigaciji — samo dobroj večeri.
               </p>
